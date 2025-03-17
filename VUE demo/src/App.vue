@@ -1,9 +1,12 @@
 <template>
-  <Home></Home>
+  <Nav></Nav>
+  
+  <Footer></Footer>
 </template>
 
 <script  setup>
-
+import Nav from "@/components/Nav.vue";
+import Footer from "@/components/Footer.vue";
 import Home from "@/pages/Home.vue";
-components:{Home}
+components:{Nav,Footer}
 </script>

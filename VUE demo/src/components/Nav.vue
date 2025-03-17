@@ -11,8 +11,13 @@
             <div class="menu w-[70%] ">
                 <div class="menu">
                     <ul class="flex justify-end gap-4">
-                        <li><a href="">Home</a></li>
-                        <li><a href="">About</a></li>
+                        <li>
+                            <router-link to="/">Home</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/about">About</router-link>
+                        </li>
+                        
                         <li><a href="">Contact</a></li>
                     </ul>
                 </div>
@@ -20,4 +25,12 @@
             </div>
         </div>
     </nav>
+    <router-view></router-view>
 </template>
+
+<script setup>
+import Home from '../pages/Home.vue'
+import About from '../pages/About.vue'
+
+component:{Home,About}
+</script>
