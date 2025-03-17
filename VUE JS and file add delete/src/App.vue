@@ -12,7 +12,7 @@
 </template>
 
 <script  setup>
-import { ref, onMounted(() => {  }), } from 'vue';
+import { ref, onMounted} from 'vue';
 
 
 const newTask =ref('');
@@ -31,11 +31,11 @@ onMounted(async() => {
     //to check api we can use the postman softwear , also there is a built in package for this in vs code
     const response = await fetch('https://jsonplaceholder.typicode.com/todos')// with await keyword the api tells the page to wait untile the data processing is finished
     const data = await response.json()//Turning the given data from api into json formate
-    task.value = data.map((task) => task.title)// the values of data are pushed inside task and after pushing the title of task was requested 
+    tasks.value = data.map((task) => task.title)// the values of data are pushed inside task and after pushing the title of task was requested 
   } 
   catch (error) {
     console.log('Warning!!');
   }
-}),
+});
 
 </script>
