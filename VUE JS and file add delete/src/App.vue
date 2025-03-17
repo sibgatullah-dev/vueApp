@@ -12,7 +12,7 @@
 </template>
 
 <script  setup>
-import { ref } from 'vue';
+import { ref, onMounted(() => {  }), } from 'vue';
 
 
 const newTask =ref('');
@@ -25,5 +25,14 @@ const addTask =()=>{
 const removeTask =(index)=>{
   tasks.value.splice(index,1)
 };
+
+onMounted(async() => {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos')//await keyword tells the page to wait untile the data processing is finished
+  } 
+  catch (error) {
+    console.log('Warning!!');
+  }
+}),
 
 </script>
